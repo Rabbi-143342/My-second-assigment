@@ -88,3 +88,448 @@ body {
   width: 350px;
   border-radius: 10px;
 }
+
+/* 🔸 Plants Section */
+.plants {
+  margin-top: 80px;
+  padding: 40px 20px;
+  background-color: #f0fdf4;
+  border-radius: 15px;
+}
+
+.plants-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.plants-header h3 {
+  font-size: 36px;
+  color: #2f4f2f;
+}
+
+.plants-header p {
+  color: #555;
+  font-size: 16px;
+  margin-top: 8px;
+}
+
+/* 🔸 Plant Grid Layout */
+.plant-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 🔸 Each Plant Card */
+.plant-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.3s;
+}
+
+.plant-card:hover {
+  transform: scale(1.05);
+}
+
+.plant-card img {
+  width: 100%;
+  /* max-height: 180px; */
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.plant-card h3 {
+  font-size: 18px;
+  color: #2f4f2f;
+  margin-bottom: 8px;
+}
+
+.plant-card p {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+/* 🔸 Add to Cart Button */
+.plant-card button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.plant-card button:hover {
+  background-color: #388e3c;
+}
+/* 🔸 Plants Lover Section */
+.plant-lover {
+  margin: 80px 0;
+  padding: 40px 20px;
+  background-color: #fffbe7;
+  border-radius: 15px;
+}
+
+.lover-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 🔹 Image Styling */
+.lover-image img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 15px;
+}
+
+/* 🔹 Text Section */
+.lover-text {
+  flex: 1;
+}
+
+.lover-text h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #2e7d32;
+}
+
+.lover-text ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  color: #444;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* 🔸 Latest Deals Section */
+.deals-section {
+  margin: 80px 0;
+  padding: 40px 20px;
+  background-color: #f3f6fc;
+  border-radius: 15px;
+}
+
+.deals-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.deals-header h2 {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.deals-header .highlight {
+  color: #e36414;
+}
+
+.deals-header p {
+  max-width: 600px;
+  margin: 10px auto 0;
+  color: #555;
+  font-size: 16px;
+}
+
+/* 🔸 Grid Layout */
+.deals-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* 🔹 Left 2 small cards vertically */
+.deals-left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+  min-width: 250px;
+}
+
+/* 🔹 Common card styles */
+.deal-card {
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  position: relative;
+  color: #fff;
+  overflow: hidden;
+  min-height: 200px;
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+}
+
+.deal-card.small {
+  height: 200px;
+}
+
+.deal-card.big {
+  flex: 2;
+  min-height: 420px;
+}
+
+/* 🔹 Deal Text */
+.deal-content h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.deal-content a {
+  display: inline-block;
+  padding: 8px 14px;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #e36414;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+
+.deal-content a:hover {
+  background-color: #ffe4cc;
+}
+
+/* 🔹 Responsive
+@media (max-width: 768px) {
+  .deals-grid {
+    flex-direction: column;
+  }
+
+  .deal-card.big {
+    order: -1; /* show big card first on mobile */
+  }
+} */
+
+/* 🔶 Join Section */
+.join-section {
+  background-image: url('assets/news-letter-bg.png'); /* Replace with your own image if needed */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 120px 20px;
+  text-align: center;
+  color: white;
+}
+
+.join-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.join-content h2 {
+  font-size: 42px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+/* Form */
+.join-form {
+  display: flex;
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.join-form input {
+  flex: 1;
+  padding: 16px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+
+.join-form button {
+  background-color: #f15c1f;
+  color: white;
+  padding: 16px 24px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.join-form button:hover {
+  background-color: #c74600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .join-form {
+    flex-direction: column;
+  }
+
+  .join-form input,
+  .join-form button {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .join-form button {
+    border-top: 1px solid #ccc;
+  }
+
+  .join-content h2 {
+    font-size: 28px;
+  }
+}
+
+ /* 🔸 Join Section */
+/* .join-section {
+  background-image: url('https://i.ibb.co/DYgPVKg/flower-bg.jpg'); /* Change to Figma bg if needed */
+  /* background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 100px 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.join-content h2 {
+  font-size: 42px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.join-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  gap: 0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.join-form input {
+  flex: 1;
+  padding: 14px;
+  border: none;
+  font-size: 16px;
+  outline: none;
+}
+
+.join-form button {
+  padding: 14px 24px;
+  background-color: #f15c1f;
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.join-form button:hover {
+  background-color: #cc4700;
+} */ */
+
+/* 🔸 Footer */
+.footer {
+  background-color: #ffffff;
+  padding: 60px 20px;
+  color: #444;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* Left logo */
+.footer-left {
+  flex: 1 1 250px;
+}
+
+.footer-logo {
+  width: 140px;
+  margin-bottom: 15px;
+}
+
+.footer-left p {
+  font-size: 15px;
+  line-height: 1.6;
+  max-width: 280px;
+}
+
+/* Footer Links */
+.footer-links {
+  display: flex;
+  gap: 40px;
+  flex: 2;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 12px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.footer-links ul li:hover {
+  color: #f15c1f;
+}
+
+/* Social Icons */
+.footer-social {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.footer-social img {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.3s;
+}
+
+.footer-social img:hover {
+  transform: scale(1.2);
+}
+
+/* 🔹 Responsive */
+@media (max-width: 768px) {
+  .join-form {
+    flex-direction: column;
+  }
+
+  .join-form input,
+  .join-form button {
+    width: 100%;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer-social {
+    margin-top: 20px;
+  }
+}
