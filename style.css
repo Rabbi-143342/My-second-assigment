@@ -6,12 +6,12 @@
 }
 
 /* 🔸 Body styling */
-body {
+* body {
   font-family: Arial, sans-serif;
   background-color: #f9fbfe;
   color: #333;
   padding: 20px;
-}
+} 
 
 /* 🔸 Navbar styling */
 .navbar {
@@ -41,13 +41,24 @@ body {
 .nav-links a {
   margin-left: 20px;
   text-decoration: none;
-  color: #333;
   font-weight: 500;
 }
 
-.nav-links a:hover {
-  color: #e36414;
+/* এখন নির্দিষ্টভাবে রঙ দিন */
+.nav-links a:not(.shop-link):not(.about-link) {
+  color: #000000;
 }
+
+.shop-link {
+  color: #8987A1;
+  font-weight: bold;
+}
+
+.about-link {
+  color: #8987A1;
+  font-weight: bold;
+}
+
 
 /* 🔸 Hero section styling */
 .hero {
@@ -89,20 +100,21 @@ body {
   border-radius: 10px;
 }
 
-/* 🔸 Plants Section */
-.plants {
+/* 🔸 Plants Lover Section */
+.plants { 
   margin-top: 80px;
   padding: 40px 20px;
-  background-color: #f0fdf4;
+  background-color: white;
   border-radius: 15px;
 }
 
 .plants-header {
   text-align: center;
   margin-bottom: 40px;
+  width: 100%;
 }
 
-.plants-header h3 {
+.plants-header h2 {
   font-size: 36px;
   color: #2f4f2f;
 }
@@ -111,66 +123,69 @@ body {
   color: #555;
   font-size: 16px;
   margin-top: 8px;
-}
+} 
 
 /* 🔸 Plant Grid Layout */
-.plant-grid {
+.plant-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
-/* 🔸 Each Plant Card */
-.plant-card {
+.plants-card {
   background-color: white;
-  border: 1px solid #ddd;
+  border: 1px solid #eee;
   border-radius: 12px;
   text-align: center;
   padding: 20px;
   transition: transform 0.3s;
 }
 
-.plant-card:hover {
+.plants-card:hover {
   transform: scale(1.05);
 }
 
-.plant-card img {
+.plants-card img {
   width: 100%;
-  /* max-height: 180px; */
-  object-fit: cover;
+  max-height: 250spx;
+  object-fit: contain;
   border-radius: 10px;
   margin-bottom: 15px;
 }
 
-.plant-card h3 {
+.plants-card h3 {
   font-size: 18px;
   color: #2f4f2f;
   margin-bottom: 8px;
 }
 
-.plant-card p {
+.plants-card p {
   font-size: 16px;
   color: #333;
   margin-bottom: 12px;
 }
 
-/* 🔸 Add to Cart Button */
-.plant-card button {
-  background-color: #4caf50;
+.plants-card button {
+  background-color: #E95A08;
   color: white;
   border: none;
-  padding: 10px 16px;
-  border-radius: 5px;
+  padding: 12px 20px;
+  border-radius: 6px;
   cursor: pointer;
   font-weight: bold;
+  font-size: 16px;
+  width: 100%; 
 }
 
-.plant-card button:hover {
+.plants-card button:hover {
   background-color: #388e3c;
 }
-/* 🔸 Plants Lover Section */
+
+/* 🔸 Plant Lover Section */
 .plant-lover {
   margin: 80px 0;
   padding: 40px 20px;
@@ -187,14 +202,12 @@ body {
   margin: 0 auto;
 }
 
-/* 🔹 Image Styling */
 .lover-image img {
   width: 100%;
   max-width: 450px;
   border-radius: 15px;
 }
 
-/* 🔹 Text Section */
 .lover-text {
   flex: 1;
 }
@@ -213,174 +226,196 @@ body {
   line-height: 1.8;
 }
 
-/* 🔸 Latest Deals Section */
-.deals-section {
-  margin: 80px 0;
-  padding: 40px 20px;
-  background-color: #f3f6fc;
-  border-radius: 15px;
+.image-wrapper { 
+  position: relative;        /* This allows absolute positioning inside */
+  display: inline-block;
 }
 
-.deals-header {
-  text-align: center;
-  margin-bottom: 40px;
+.image-wrapper img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
-.deals-header h2 {
-  font-size: 36px;
-  font-weight: bold;
+.badge {
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 140px;         /* 🟧 বড় সাইজ */
+  height: auto;
+  z-index: 10;
+  
+/* ✅ পেছনে কালো ছায়া */
+  box-shadow: 0 12px 6px rgba(0, 0, 0, 0.2);
+
+  border-radius: 50%;
 }
 
-.deals-header .highlight {
-  color: #e36414;
-}
-
-.deals-header p {
-  max-width: 600px;
-  margin: 10px auto 0;
-  color: #555;
-  font-size: 16px;
-}
-
-/* 🔸 Grid Layout */
-.deals-grid {
+ 
+  
+/* New container */
+.container {
   display: flex;
   gap: 20px;
-  flex-wrap: wrap;
+  padding: 20px;
+  background-color: #f0f4ff;
+  justify-content: center;
 }
 
-/* 🔹 Left 2 small cards vertically */
-.deals-left {
+
+.left {
   display: flex;
   flex-direction: column;
   gap: 20px;
   flex: 1;
-  min-width: 250px;
 }
 
-/* 🔹 Common card styles */
-.deal-card {
-  background-size: cover;
-  background-position: center;
-  border-radius: 15px;
-  position: relative;
-  color: #fff;
-  overflow: hidden;
-  min-height: 200px;
-  display: flex;
-  align-items: flex-end;
-  padding: 20px;
-}
-
-.deal-card.small {
-  height: 200px;
-}
-
-.deal-card.big {
+.right {
   flex: 2;
-  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-/* 🔹 Deal Text */
-.deal-content h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
+.card {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
 }
 
-.deal-content a {
-  display: inline-block;
-  padding: 8px 14px;
-  background-color: rgba(255, 255, 255, 0.9);
-  color: #e36414;
+.card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 22px;
   font-weight: bold;
-  text-decoration: none;
-  border-radius: 6px;
-  transition: background 0.3s;
+  text-align: center;
+  z-index: 2;
+  text-shadow: 1px 1px 5px black;
 }
 
-.deal-content a:hover {
-  background-color: #ffe4cc;
+.text a {
+  display: inline-block;
+  margin-top: 8px;
+  color: white;
+  font-weight: bold;
+  text-decoration: underline;
 }
 
-/* 🔹 Responsive
-@media (max-width: 768px) {
-  .deals-grid {
+/* @media (max-width: 768px) {
+  .container {
     flex-direction: column;
   }
 
-  .deal-card.big {
-    order: -1; /* show big card first on mobile */
+  .right {
+    order: -1;
   }
 } */
 
-/* 🔶 Join Section */
+
+/* ✅ Join Section with Full Background */
 .join-section {
-  background-image: url('assets/news-letter-bg.png'); /* Replace with your own image if needed */
+  background-image: url('assets/news-letter-bg.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 120px 20px;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* Optional overlay effect */
+.join-overlay {
+  width: 100%;
+  padding: 60px 20px;
   text-align: center;
-  color: white;
+  color: #fff;
 }
 
 .join-content {
-  max-width: 700px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
+/* ✅ Heading */
 .join-content h2 {
-  font-size: 42px;
-  font-weight: bold;
+  font-size: 40px;
+  font-weight: 700;
   margin-bottom: 30px;
 }
 
-/* Form */
+/* ✅ Form */
 .join-form {
   display: flex;
-  max-width: 600px;
-  margin: 0 auto;
-  border-radius: 6px;
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  background-color: white; /* পুরো form এর bg সাদা */
 }
 
+/* ✅ Input Field */
 .join-form input {
   flex: 1;
-  padding: 16px;
+  padding: 15px;
+  font-size: 16px;
   border: none;
   outline: none;
-  font-size: 16px;
+  background-color: white;
+  min-width: 220px;
 }
 
+/* ✅ Button */
 .join-form button {
-  background-color: #f15c1f;
+  padding: 15px 24px;
+  background-color: #e65100;
+  /* background-color: #f15c1f; */
   color: white;
-  padding: 16px 24px;
-  border: none;
   font-weight: bold;
+  border: none;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: 0.3s;
+  min-width: 120px;
 }
 
 .join-form button:hover {
-  background-color: #c74600;
+  background-color: #c74e12;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* ✅ Mobile Responsive */
+/* @media (max-width: 768px) {
   .join-form {
     flex-direction: column;
+    border-radius: 8px;
+    overflow: hidden;
   }
 
   .join-form input,
   .join-form button {
     width: 100%;
-    box-sizing: border-box;
-  }
-
-  .join-form button {
-    border-top: 1px solid #ccc;
+    border-radius: 0;
   }
 
   .join-content h2 {
@@ -388,53 +423,11 @@ body {
   }
 }
 
- /* 🔸 Join Section */
-/* .join-section {
-  background-image: url('https://i.ibb.co/DYgPVKg/flower-bg.jpg'); /* Change to Figma bg if needed */
-  /* background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 100px 20px;
-  text-align: center;
-  color: #fff;
-}
 
-.join-content h2 {
-  font-size: 42px;
-  font-weight: bold;
-  margin-bottom: 30px;
-}
-
-.join-form {
-  max-width: 600px;
+.join-content {
+  max-width: 700px;
   margin: 0 auto;
-  display: flex;
-  gap: 0;
-  border-radius: 6px;
-  overflow: hidden;
-}
-
-.join-form input {
-  flex: 1;
-  padding: 14px;
-  border: none;
-  font-size: 16px;
-  outline: none;
-}
-
-.join-form button {
-  padding: 14px 24px;
-  background-color: #f15c1f;
-  color: white;
-  border: none;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.join-form button:hover {
-  background-color: #cc4700;
-} */ */
+} */
 
 /* 🔸 Footer */
 .footer {
@@ -448,7 +441,7 @@ body {
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  gap: 40px;
+  gap: 48px;
   justify-content: space-between;
   align-items: flex-start;
 }
@@ -464,21 +457,40 @@ body {
 }
 
 .footer-left p {
+  color: #888888;
   font-size: 15px;
   line-height: 1.6;
   max-width: 280px;
 }
 
+footer ul li {
+  color: #888888;  /* একটু হালকা ধূসর বা অন্য কালার */
+  margin-bottom: 8px; /* আইটেমগুলোর মাঝে গ্যাপ */
+  font-size: 15px;
+  cursor: pointer;
+}
+
+ul li {
+  margin-bottom: auto;  /* ছোট গ্যাপ */
+}
+
+ul li {
+  padding-bottom: 25px; /* ছোট্ট প্যাডিং দিয়ে গ্যাপ */
+}
+
+
 /* Footer Links */
 .footer-links {
   display: flex;
-  gap: 40px;
+  /* justify-content: space-between; */
+  gap: 50px;
   flex: 2;
 }
 
 .footer-links ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .footer-links ul li {
@@ -508,8 +520,57 @@ body {
   transform: scale(1.2);
 }
 
-/* 🔹 Responsive */
 @media (max-width: 768px) {
+  /* 🔹 Navbar */
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .nav-links a {
+    margin-left: 0;
+  }
+
+  /* 🔹 Hero Section */
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .hero-image img {
+    width: 100%;
+    max-width: 300px;
+    margin-top: 20px;
+  }
+
+  /* 🔹 Plant Grid */
+  .plant-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* 🔹 Plant Lover */
+  .lover-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .lover-image img {
+    max-width: 100%;
+  }
+
+  /* 🔹 Join Form */
   .join-form {
     flex-direction: column;
   }
@@ -517,11 +578,18 @@ body {
   .join-form input,
   .join-form button {
     width: 100%;
+    border-radius: 0;
   }
 
+  .join-content h2 {
+    font-size: 28px;
+  }
+
+  /* 🔹 Footer */
   .footer-container {
     flex-direction: column;
     align-items: flex-start;
+    gap: 30px;
   }
 
   .footer-links {
